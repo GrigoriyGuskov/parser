@@ -1,8 +1,3 @@
-from typing import Iterable
-from scrapy.spiders import CrawlSpider, Rule
-from scrapy.linkextractors import LinkExtractor
-from scrapy.selector import Selector
-from pathlib import Path
 import scrapy
 import pandas
 
@@ -70,7 +65,7 @@ class CatalogSpider(scrapy.Spider):
         if not flag:
             pddes = pddes + des
 
-        charact = response.xpath('//div[@class="table-character"]//text()').getall()
+        # charact = response.xpath('//div[@class="table-character"]//text()').getall()
 
         df = pandas.DataFrame({'url': [response.url],
                                'name': [name],
